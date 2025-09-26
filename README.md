@@ -2,7 +2,14 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, add your environment variables:
+
+1. Copy `.env.local.example` to `.env.local`.
+2. Create a GitHub OAuth App from your GitHub account settings and copy the generated Client ID and Client Secret into `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`.
+3. Generate a random value for `NEXTAUTH_SECRET` (for example, using `openssl rand -base64 32`).
+4. Adjust `NEXTAUTH_URL` if you are running on a different host or deploying to production.
+
+Then, run the development server:
 
 ```bash
 npm run dev
