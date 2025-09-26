@@ -6,6 +6,11 @@ import clientPromise from "./lib/mongodb";
 // Auth.js (next-auth v5) configuration
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: MongoDBAdapter(clientPromise),
-  providers: [GitHub],
+  providers: [
+    GitHub({
+      clientId: process.env.AUTH_GITHUB_ID,
+      clientSecret: process.env.AUTH_GITHUB_SECRET,
+    }),
+  ],
   secret: process.env.AUTH_SECRET,
 });
